@@ -1,5 +1,7 @@
 <template>
+    <vBind/>
 </template>
 
-<script>
+<script setup>
+import vBind from './components/test/vBind.vue'
 </script>
