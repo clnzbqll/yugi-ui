@@ -1,10 +1,12 @@
 <template>
-    <vOn/>
+    <computed/>
 </template>
 
 <script setup>
 import vBind from './components/test/instruct/vBind.vue'
 import vIfElse from './components/test/instruct/vIfElse.vue'
 import vFor from './components/test/instruct/vFor.vue'
-import vOn from './components/test/event/vOn.vue'
+import methods from './components/test/event/methods.vue'
+import computed from './components/test/event/computed.vue'
+import array from './components/test/array/array.vue'
 </script>
