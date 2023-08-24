@@ -6,18 +6,19 @@
     </div>
 </template>
 
-<script>
-export default{
-    data(){
-        return{
-            msg: "登录成功"
-        }
-    },
-    methods:{
-        login(msg, e){
-            console.log(msg)
-            console.log(e)
-        }
-    }
+
+<script setup>
+import { ref } from 'vue';
+
+// ref()是vue3提供的api，返回一个响应式的对象数据
+const msg = ref("登录成功")
+const start = ref("开始登录")
+
+// setup是vue3提供的语法糖，代替vue2的created使用
+console.log(start.value);
+
+const login = (msg, e) => {
+    console.log(msg)
+    console.log(e)
 }
 </script>
