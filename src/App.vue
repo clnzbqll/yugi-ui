@@ -1,10 +1,8 @@
 <!-- TODO VUE根组件 -->
 <template>
-    <computed/>
+    <login/>
 </template>
 
 <script setup>
-import methods from './components/test/event/methods.vue'
-import computed from './components/test/event/computed.vue'
-import watch from './components/test/event/watch.vue'
+import login from './views/login.vue'
 </script>
