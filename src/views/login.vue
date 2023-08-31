@@ -1,7 +1,11 @@
 <template>
-    <div>登录</div>
+    <button @click="handleLogin">登录</button>
 </template>
 
 <script setup>
-console.log("开始登录");
+import {login} from '@/api/sys/login'
+
+function handleLogin(){
+    login()
+}
 </script>

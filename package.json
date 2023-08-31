@@ -1,15 +1,16 @@
 {
-  "name": "yugi-ui-test",
-  "version": "0.0.0",
+  "name": "yugi-ui",
+  "version": "0.0.1",
   "private": true,
   "scripts": {
     "dev": "vite",
-    "build": "vite build",
+    "build:prod": "vite build",
     "preview": "vite preview"
   },
   "dependencies": {
     "vue": "^3.3.4",
-    "vuex": "4.0.2"
+    "vuex": "4.0.2",
+    "axios": "0.24.0"
   },
   "devDependencies": {
     "vite": "^4.4.6",
