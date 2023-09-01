@@ -1,9 +1,10 @@
 import request from '@/utils/request'
 
 // 登录
-export function login() {
+export function login(data) {
     return request({
-        url: '/api/sys/login',
-        method: 'get',
-    })
+        url: `/api/sys/login`,
+        method: "post",
+        data: data,
+    });
 }

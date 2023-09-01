@@ -6,6 +6,13 @@
 import {login} from '@/api/sys/login'
 
 function handleLogin(){
-    login()
+    var data = {
+        username: "clnzbqll",
+        password: "123456"
+    }
+    Promise.resolve(login(data))
+    .then(() =>{
+        console.log("登入成功");
+    })
 }
 </script>
