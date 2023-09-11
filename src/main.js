@@ -1,12 +1,12 @@
-// TODO 主入口文件
-// TODO 根组件
-import { createApp } from 'vue'
+/* Element-Plus */
+import ElementPlus from 'element-plus'
+import 'element-plus/theme-chalk/index.css'
+
+import {createApp} from 'vue'
 import App from './App.vue'
 
 const app = createApp(App);
 
-// 全局注册组件
-// app.component()
+app.use(ElementPlus)
 
-// TODO 挂载应用
 app.mount('#app')
