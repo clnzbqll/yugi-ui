@@ -1,8 +1,10 @@
-/* 提供请求响应扩展支持 */
+/* Axios网络请求库 */
 import axios from 'axios'
 
+import {ElMessage} from 'element-plus'
 import cache from '@/plugins/cache'
 import {tansParams} from '@/utils/ruoyi'
+import errorCode from '@/utils/errorCode'
 
 // axios初始化
 axios.defaults.headers['Content-Type'] = 'application/json;charset=utf-8'
@@ -49,5 +51,47 @@ service.interceptors.request.use(config => {
     console.log(error)
     Promise.reject(error)
 })
+
+// 响应拦截
+service.interceptors.response.use(res => {
+    // 二进制数据直接返回
+    if (res.request.responseType === 'blob' || res.request.responseType === 'arraybuffer') {
+        return res
+    }
+    // 状态码
+    const code = res.data.code || 200;
+    // 信息
+    const msg = errorCode[code] || res.data.msg || errorCode[400]
+    if (code === 401) {
+        // TODO 401的登出处理
+        console.log("登录失败");
+        return Promise.reject(new Error(errorCode[401]))
+    }else if(code === 500) {
+        ElMessage({
+            message: msg,
+            type: 'error'
+        })
+        return Promise.reject(new Error(msg))
+    }else {
+        return Promise.resolve(res.data)
+    }
+},error => {
+    console.log(error)
+    let {message} = error;
+    if (message == "Network Error") {
+        message = "Network Error";
+    }else if (message.includes("timeout")) {
+        message = "Request Timeout";
+    }else if (message.includes("Request failed with status code")) {
+        message = "Api " + message.substr(message.length - 3) + " error";
+    }
+    ElMessage({
+        message: message,
+        type: 'error',
+        duration: 5000
+    })
+    return Promise.reject(error)
+})
+
 
 export default service

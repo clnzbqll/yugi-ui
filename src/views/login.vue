@@ -11,7 +11,8 @@ function handleLogin(){
         password: "123456"
     }
     Promise.resolve(login(data))
-    .then(() =>{
+    .then((res) =>{
+        console.log(res)
         console.log("登入成功");
     })
 }
