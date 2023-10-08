@@ -1,8 +1,7 @@
 <!-- TODO VUE根组件 -->
 <template>
-    <login/>
+    <router-view/>
 </template>
 
 <script setup>
-import login from './views/login.vue'
 </script>

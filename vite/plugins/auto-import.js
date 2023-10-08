@@ -1,4 +1,4 @@
-/* 提供自动引入依赖支持 */
+/* Vite自动引入支持 */
 import autoImport from 'unplugin-auto-import/vite'
 
 export default function createAutoImport() {
@@ -9,8 +9,7 @@ export default function createAutoImport() {
             'vue-router',
             // custom
             {
-                // import {useStore} from 'vuex'
-                'vuex': ['useStore']
+                'vuex': ['useStore'] // import {useStore} from 'vuex'
             }
         ],
         dts: false

@@ -5,6 +5,8 @@
 <script setup>
 import {login} from '@/api/sys/login'
 
+const store = useStore();
+
 function handleLogin(){
     var data = {
         username: "clnzbqll",

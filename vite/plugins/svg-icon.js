@@ -1,4 +1,4 @@
-/* 提供Vite使用svg图标的支持 */
+/* Vite-SVG插件 */
 import {createSvgIconsPlugin} from 'vite-plugin-svg-icons'
 
 // path是node的默认库，不需要安装

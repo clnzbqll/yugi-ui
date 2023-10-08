@@ -1,4 +1,4 @@
-/* 提供vite打包优化支持 */
+/* Vite打包插件 */
 import compression from 'vite-plugin-compression'
 
 export default function createCompression(env) {

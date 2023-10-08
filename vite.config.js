@@ -25,6 +25,6 @@ export default defineConfig(({ mode, command }) => {
           rewrite: (p) => p.replace(/^\/yg/, ""),
         },
       },
-    },
+    }, 
   }
 })

@@ -10,8 +10,11 @@
   "dependencies": {
     "vue": "^3.3.4",
     "vuex": "4.0.2",
+    "vue-router": "4.0.12",
     "axios": "0.24.0",
-    "element-plus": "2.2.26"
+    "element-plus": "2.2.26",
+    "js-cookie": "3.0.1",
+    "nprogress": "0.2.0"
   },
   "devDependencies": {
     "vite": "^4.4.6",
